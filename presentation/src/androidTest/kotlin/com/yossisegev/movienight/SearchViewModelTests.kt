@@ -16,7 +16,6 @@ import org.junit.Test
 import org.junit.runner.RunWith
 import org.mockito.Mockito.*
 
-
 @Suppress("UNCHECKED_CAST")
 @RunWith(AndroidJUnit4::class)
 class SearchViewModelTests {

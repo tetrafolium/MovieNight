@@ -11,8 +11,10 @@ import com.yossisegev.movienight.entities.Movie
 /**
  * Created by Yossi Segev on 09/02/2018.
  */
-class FavoriteMoviesViewModel(private val getFavoriteMovies: GetFavoriteMovies,
-                              private val movieEntityMovieMapper: Mapper<MovieEntity, Movie>) : BaseViewModel() {
+class FavoriteMoviesViewModel(
+    private val getFavoriteMovies: GetFavoriteMovies,
+    private val movieEntityMovieMapper: Mapper<MovieEntity, Movie>
+) : BaseViewModel() {
 
     var viewState: MutableLiveData<FavoritesMoviesViewState> = MutableLiveData()
     var errorState: SingleLiveEvent<Throwable?> = SingleLiveEvent()
@@ -32,12 +34,9 @@ class FavoriteMoviesViewModel(private val getFavoriteMovies: GetFavoriteMovies,
                             movies = movies)
                     viewState.value = newViewState
                     errorState.value = null
-
                 }, {
                     viewState.value = viewState.value?.copy(isLoading = false, isEmpty = false)
                     errorState.value = it
-
                 })
     }
-
 }

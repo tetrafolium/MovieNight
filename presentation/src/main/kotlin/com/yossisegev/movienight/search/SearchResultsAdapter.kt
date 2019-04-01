@@ -1,6 +1,5 @@
 package com.yossisegev.movienight.search
 
-
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -13,8 +12,10 @@ import kotlinx.android.synthetic.main.search_results_adapter_row.view.*
 /**
  * Created by Yossi Segev on 14/11/2017.
  */
-class SearchResultsAdapter constructor(private val imageLoader: ImageLoader,
-                                       private val onMovieSelected: (Movie, View) -> Unit) : RecyclerView.Adapter<SearchResultsAdapter.MovieCellViewHolder>() {
+class SearchResultsAdapter constructor(
+    private val imageLoader: ImageLoader,
+    private val onMovieSelected: (Movie, View) -> Unit
+) : RecyclerView.Adapter<SearchResultsAdapter.MovieCellViewHolder>() {
 
     private var movies: List<Movie> = listOf()
     var query: String? = null
@@ -61,6 +62,5 @@ class SearchResultsAdapter constructor(private val imageLoader: ImageLoader,
 
             setOnClickListener { listener(movie, itemView) }
         }
-
     }
 }

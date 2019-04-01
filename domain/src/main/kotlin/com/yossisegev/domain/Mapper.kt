@@ -3,7 +3,6 @@ package com.yossisegev.domain
 import com.yossisegev.domain.entities.Optional
 import io.reactivex.Observable
 
-
 /**
  * Created by Yossi Segev on 05/01/2018.
  */

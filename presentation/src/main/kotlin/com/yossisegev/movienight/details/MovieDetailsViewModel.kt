@@ -16,12 +16,14 @@ import io.reactivex.functions.BiFunction
 /**
  * Created by Yossi Segev on 07/01/2018.
  */
-class MovieDetailsViewModel(private val getMovieDetails: GetMovieDetails,
-                            private val saveFavoriteMovie: SaveFavoriteMovie,
-                            private val removeFavoriteMovie: RemoveFavoriteMovie,
-                            private val checkFavoriteStatus: CheckFavoriteStatus,
-                            private val mapper: Mapper<MovieEntity, Movie>,
-                            private val movieId: Int) : BaseViewModel() {
+class MovieDetailsViewModel(
+    private val getMovieDetails: GetMovieDetails,
+    private val saveFavoriteMovie: SaveFavoriteMovie,
+    private val removeFavoriteMovie: RemoveFavoriteMovie,
+    private val checkFavoriteStatus: CheckFavoriteStatus,
+    private val mapper: Mapper<MovieEntity, Movie>,
+    private val movieId: Int
+) : BaseViewModel() {
 
     lateinit var movieEntity: MovieEntity
     var viewState: MutableLiveData<MovieDetailsViewState> = MutableLiveData()

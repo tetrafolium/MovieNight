@@ -1,7 +1,6 @@
 package com.yossisegev.movienight.di
 
 import com.yossisegev.movienight.di.modules.*
-import com.yossisegev.movienight.MainActivity
 import com.yossisegev.movienight.di.details.MovieDetailsModule
 import com.yossisegev.movienight.di.details.MovieDetailsSubComponent
 import com.yossisegev.movienight.di.favorites.FavoriteModule

@@ -7,7 +7,6 @@ import android.support.annotation.MainThread
 import android.util.Log
 import java.util.concurrent.atomic.AtomicBoolean
 
-
 /**
  * Created by Yossi Segev on 16/02/2018.
  * This class is a Kotlin adaptions of the SingleLiveEvent by Google:

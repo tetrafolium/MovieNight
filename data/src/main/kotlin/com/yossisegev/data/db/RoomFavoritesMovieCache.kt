@@ -10,9 +10,11 @@ import io.reactivex.Observable
 /**
  * Created by Yossi Segev on 22/01/2018.
  */
-class RoomFavoritesMovieCache(database: MoviesDatabase,
-                              private val entityToDataMapper: Mapper<MovieEntity, MovieData>,
-                              private val dataToEntityMapper: Mapper<MovieData, MovieEntity>) : MoviesCache {
+class RoomFavoritesMovieCache(
+    database: MoviesDatabase,
+    private val entityToDataMapper: Mapper<MovieEntity, MovieData>,
+    private val dataToEntityMapper: Mapper<MovieData, MovieEntity>
+) : MoviesCache {
     private val dao: MoviesDao = database.getMoviesDao()
 
     override fun clear() {

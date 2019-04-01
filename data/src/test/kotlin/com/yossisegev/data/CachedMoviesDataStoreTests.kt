@@ -9,7 +9,6 @@ import org.junit.After
 import org.junit.Before
 import org.junit.Test
 
-
 /**
  * Created by Yossi Segev on 22/01/2018.
  */

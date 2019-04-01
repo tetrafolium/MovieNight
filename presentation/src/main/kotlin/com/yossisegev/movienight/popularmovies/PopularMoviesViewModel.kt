@@ -12,8 +12,10 @@ import com.yossisegev.movienight.entities.Movie
  * Created by Yossi Segev on 11/11/2017.
  */
 
-class PopularMoviesViewModel(private val getPopularMovies: GetPopularMovies,
-                             private val movieEntityMovieMapper: Mapper<MovieEntity, Movie>) :
+class PopularMoviesViewModel(
+    private val getPopularMovies: GetPopularMovies,
+    private val movieEntityMovieMapper: Mapper<MovieEntity, Movie>
+) :
         BaseViewModel() {
 
     var viewState: MutableLiveData<PopularMoviesViewState> = MutableLiveData()
@@ -32,7 +34,6 @@ class PopularMoviesViewModel(private val getPopularMovies: GetPopularMovies,
                         this.viewState.value = newState
                         this.errorState.value = null
                     }
-
                 }, {
                     viewState.value = viewState.value?.copy(showLoading = false)
                     errorState.value = it

@@ -7,10 +7,8 @@ import com.yossisegev.data.mappers.MovieDataEntityMapper
 import com.yossisegev.data.repositories.MoviesRepositoryImpl
 import com.yossisegev.data.utils.TestsUtils
 import com.yossisegev.domain.MoviesRepository
-import com.yossisegev.domain.common.DomainTestUtils
 import com.yossisegev.domain.common.DomainTestUtils.Companion.generateMovieEntityList
 import com.yossisegev.domain.common.TestMoviesCache
-import com.yossisegev.domain.entities.MovieDetailsEntity
 import io.reactivex.Observable
 import org.junit.Before
 import org.junit.Test
@@ -63,7 +61,6 @@ class MovieRepositoryImplTests {
         movieRepository.search("test query").test()
                 .assertComplete()
                 .assertValue { results -> results.size == 5 }
-
     }
 
     @Test

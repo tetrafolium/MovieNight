@@ -154,6 +154,4 @@ class MovieDetailsViewModelTests {
 
         verifyZeroInteractions(errorObserver)
     }
-
-
 }

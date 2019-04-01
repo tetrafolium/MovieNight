@@ -12,8 +12,10 @@ import com.yossisegev.movienight.entities.Movie
 /**
  * Created by Yossi Segev on 11/02/2018.
  */
-class SearchViewModel(private val searchMovie: SearchMovie,
-                      private val entityMovieMapper: Mapper<MovieEntity, Movie>) : BaseViewModel() {
+class SearchViewModel(
+    private val searchMovie: SearchMovie,
+    private val entityMovieMapper: Mapper<MovieEntity, Movie>
+) : BaseViewModel() {
 
     var viewState: MutableLiveData<SearchViewState> = MutableLiveData()
     var errorState: SingleLiveEvent<Throwable?> = SingleLiveEvent()
@@ -52,7 +54,6 @@ class SearchViewModel(private val searchMovie: SearchMovie,
                             movies = movies,
                             lastSearchedQuery = query,
                             showNoResultsMessage = movies.isEmpty())
-
                 }, {
                     viewState.value = viewState.value?.copy(
                             isLoading = false,
@@ -62,6 +63,4 @@ class SearchViewModel(private val searchMovie: SearchMovie,
                     errorState.value = it
                 }))
     }
-
-
 }

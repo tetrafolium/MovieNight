@@ -10,7 +10,6 @@ import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
-
 /**
  * Created by Yossi Segev on 11/11/2017.
  */
@@ -66,5 +65,4 @@ class NetworkModule(private val baseUrl: String, private val apiKey: String) {
     fun provideApi(retrofit: Retrofit): Api {
         return retrofit.create(Api::class.java)
     }
-
 }

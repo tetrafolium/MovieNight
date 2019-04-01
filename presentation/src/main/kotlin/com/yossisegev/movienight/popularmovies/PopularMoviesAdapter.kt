@@ -1,6 +1,5 @@
 package com.yossisegev.movienight.popularmovies
 
-
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -13,11 +12,12 @@ import kotlinx.android.synthetic.main.popular_movies_adapter_cell.view.*
 /**
  * Created by Yossi Segev on 14/11/2017.
  */
-class PopularMoviesAdapter constructor(private val imageLoader: ImageLoader,
-                                       private val onMovieSelected: (Movie, View) -> Unit) : RecyclerView.Adapter<PopularMoviesAdapter.MovieCellViewHolder>() {
+class PopularMoviesAdapter constructor(
+    private val imageLoader: ImageLoader,
+    private val onMovieSelected: (Movie, View) -> Unit
+) : RecyclerView.Adapter<PopularMoviesAdapter.MovieCellViewHolder>() {
 
     private val movies: MutableList<Movie> = mutableListOf()
-
 
     override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): MovieCellViewHolder {
         val view = LayoutInflater.from(parent?.context).inflate(
@@ -47,6 +47,5 @@ class PopularMoviesAdapter constructor(private val imageLoader: ImageLoader,
             movie.posterPath?.let { imageLoader.load(it, image) }
             setOnClickListener { listener(movie, itemView) }
         }
-
     }
 }

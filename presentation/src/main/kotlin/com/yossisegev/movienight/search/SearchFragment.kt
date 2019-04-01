@@ -4,7 +4,6 @@ import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.text.Editable
@@ -34,11 +33,9 @@ import javax.inject.Inject
  */
 class SearchFragment : BaseFragment(), TextWatcher {
     override fun afterTextChanged(s: Editable?) {
-
     }
 
     override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-
     }
 
     override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
@@ -58,7 +55,6 @@ class SearchFragment : BaseFragment(), TextWatcher {
     private lateinit var searchSubject: PublishSubject<String>
     private val compositeDisposable = CompositeDisposable()
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -66,7 +62,7 @@ class SearchFragment : BaseFragment(), TextWatcher {
         viewModel = ViewModelProviders.of(this, factory).get(SearchViewModel::class.java)
         searchSubject = PublishSubject.create()
 
-        //TODO: Handle screen rotation during debounce
+        // TODO: Handle screen rotation during debounce
         val disposable = searchSubject.debounce(1, TimeUnit.SECONDS)
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe {
@@ -130,9 +126,9 @@ class SearchFragment : BaseFragment(), TextWatcher {
     private fun showSoftKeyboard(show: Boolean) {
         val imm = activity?.getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
         if (show) {
-           imm.toggleSoftInput(InputMethodManager.SHOW_FORCED,0)
+           imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0)
         } else {
-            imm.hideSoftInputFromWindow(searchEditText.windowToken,0)
+            imm.hideSoftInputFromWindow(searchEditText.windowToken, 0)
         }
     }
 
@@ -147,5 +143,4 @@ class SearchFragment : BaseFragment(), TextWatcher {
         compositeDisposable.clear()
         (activity?.application as App).releaseSearchComponent()
     }
-
 }

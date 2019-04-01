@@ -14,10 +14,9 @@ interface Api {
     @GET("movie/{id}?append_to_response=videos,reviews")
     fun getMovieDetails(@Path("id") movieId: Int): Observable<DetailsData>
 
-    @GET("movie/popular") ///movie/now_playing
+    @GET("movie/popular") // /movie/now_playing
     fun getPopularMovies(): Observable<MovieListResult>
 
     @GET("search/movie")
     fun searchMovies(@Query("query") query: String): Observable<MovieListResult>
-
 }

@@ -3,7 +3,6 @@ package com.yossisegev.movienight.favorites
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -78,7 +77,6 @@ class FavoriteMoviesFragment : BaseFragment() {
         emptyMessage = favorite_movies_empty_message
         recyclerView.layoutManager = LinearLayoutManager(activity)
         recyclerView.adapter = favoriteMoviesAdapter
-
     }
 
     override fun onDestroy() {

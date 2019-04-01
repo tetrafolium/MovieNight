@@ -8,5 +8,4 @@ import com.yossisegev.data.entities.VideoData
 class VideoResult {
 
     var results: List<VideoData>? = null
-
 }

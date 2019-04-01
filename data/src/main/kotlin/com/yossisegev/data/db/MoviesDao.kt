@@ -29,5 +29,4 @@ interface MoviesDao {
 
     @Query("DELETE FROM movies")
     fun clear()
-
 }

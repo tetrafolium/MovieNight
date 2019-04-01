@@ -3,15 +3,16 @@ package com.yossisegev.domain.usecases
 import com.yossisegev.domain.MoviesCache
 import com.yossisegev.domain.common.Transformer
 import io.reactivex.Observable
-import io.reactivex.ObservableTransformer
 import java.lang.IllegalArgumentException
 
 /**
  * Created by Yossi Segev on 09/02/2018.
  */
 
-class CheckFavoriteStatus(transformer: Transformer<Boolean>,
-                          private val moviesCache: MoviesCache) : UseCase<Boolean>(transformer) {
+class CheckFavoriteStatus(
+    transformer: Transformer<Boolean>,
+    private val moviesCache: MoviesCache
+) : UseCase<Boolean>(transformer) {
 
     companion object {
         private const val PARAM_MOVIE_ENTITY = "param:movieEntity"
@@ -31,5 +32,4 @@ class CheckFavoriteStatus(transformer: Transformer<Boolean>,
         data[PARAM_MOVIE_ENTITY] = movieId
         return observable(data)
     }
-
 }

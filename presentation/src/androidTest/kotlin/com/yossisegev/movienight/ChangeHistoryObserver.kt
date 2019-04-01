@@ -6,7 +6,7 @@ import android.util.Log
 /**
  * Created by Yossi Segev on 17/02/2018.
  */
-class ChangeHistoryObserver<T>: Observer<T> {
+class ChangeHistoryObserver<T> : Observer<T> {
 
     private val changeHistory = mutableListOf<T?>()
 
@@ -23,5 +23,4 @@ class ChangeHistoryObserver<T>: Observer<T> {
             Log.d(javaClass.simpleName, it.toString())
         }
     }
-
 }

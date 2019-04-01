@@ -18,7 +18,6 @@ class ReviewsAdapter(private val reviews: List<Review>) : RecyclerView.Adapter<R
         return ReviewViewHolder(view)
     }
 
-
     override fun onBindViewHolder(holder: ReviewViewHolder?, position: Int) {
         holder?.bind(reviews[position])
     }
@@ -26,7 +25,6 @@ class ReviewsAdapter(private val reviews: List<Review>) : RecyclerView.Adapter<R
     override fun getItemCount(): Int {
         return reviews.size
     }
-
 
     class ReviewViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
@@ -36,6 +34,5 @@ class ReviewsAdapter(private val reviews: List<Review>) : RecyclerView.Adapter<R
                 reviews_adapter_author.text = review.author
             }
         }
-
     }
 }

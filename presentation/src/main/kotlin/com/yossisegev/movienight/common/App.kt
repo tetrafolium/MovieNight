@@ -17,7 +17,7 @@ import com.yossisegev.movienight.di.search.SearchSubComponent
 /**
  * Created by Yossi Segev on 11/11/2017.
  */
-class App: Application() {
+class App : Application() {
 
     lateinit var mainComponent: MainComponent
     private var popularMoviesComponent: PopularSubComponent? = null
@@ -42,7 +42,6 @@ class App: Application() {
                 .networkModule(NetworkModule(getString(R.string.api_base_url), getString(R.string.api_key)))
                 .dataModule(DataModule())
                 .build()
-
     }
 
     fun createPopularComponenet(): PopularSubComponent {
@@ -53,7 +52,7 @@ class App: Application() {
         popularMoviesComponent = null
     }
 
-    fun createFavoritesComponent() : FavoritesSubComponent {
+    fun createFavoritesComponent(): FavoritesSubComponent {
         favoriteMoviesComponent = mainComponent.plus(FavoriteModule())
         return favoriteMoviesComponent!!
     }

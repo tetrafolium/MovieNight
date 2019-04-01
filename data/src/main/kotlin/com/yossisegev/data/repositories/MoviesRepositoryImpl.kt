@@ -15,10 +15,12 @@ import io.reactivex.Observable
  * Created by Yossi Segev on 25/01/2018.
  */
 
-class MoviesRepositoryImpl(api: Api,
-                           private val cache: MoviesCache,
-                           movieDataMapper: Mapper<MovieData, MovieEntity>,
-                           detailedDataMapper: Mapper<DetailsData, MovieEntity>) : MoviesRepository {
+class MoviesRepositoryImpl(
+    api: Api,
+    private val cache: MoviesCache,
+    movieDataMapper: Mapper<MovieData, MovieEntity>,
+    detailedDataMapper: Mapper<DetailsData, MovieEntity>
+) : MoviesRepository {
 
     private val memoryDataStore: MoviesDataStore
     private val remoteDataStore: MoviesDataStore
@@ -43,5 +45,4 @@ class MoviesRepositoryImpl(api: Api,
     override fun getMovie(movieId: Int): Observable<Optional<MovieEntity>> {
         return remoteDataStore.getMovieById(movieId)
     }
-
 }

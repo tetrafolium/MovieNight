@@ -1,6 +1,5 @@
 package com.yossisegev.movienight.favorites
 
-
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
@@ -10,12 +9,13 @@ import com.yossisegev.movienight.common.ImageLoader
 import com.yossisegev.movienight.entities.Movie
 import kotlinx.android.synthetic.main.favorite_movies_adapter_row.view.*
 
-
 /**
  * Created by Yossi Segev on 14/11/2017.
  */
-class FavoriteMoviesAdapter constructor(private val imageLoader: ImageLoader,
-                                        private val onMovieSelected: (Movie, View) -> Unit) : RecyclerView.Adapter<FavoriteMoviesAdapter.MovieCellViewHolder>() {
+class FavoriteMoviesAdapter constructor(
+    private val imageLoader: ImageLoader,
+    private val onMovieSelected: (Movie, View) -> Unit
+) : RecyclerView.Adapter<FavoriteMoviesAdapter.MovieCellViewHolder>() {
 
     private var movies: List<Movie> = listOf()
 
@@ -54,6 +54,5 @@ class FavoriteMoviesAdapter constructor(private val imageLoader: ImageLoader,
             }
             setOnClickListener { listener(movie, itemView) }
         }
-
     }
 }

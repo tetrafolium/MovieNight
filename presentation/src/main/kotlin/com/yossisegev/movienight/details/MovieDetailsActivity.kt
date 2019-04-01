@@ -150,7 +150,6 @@ class MovieDetailsActivity : AppCompatActivity() {
             val videosAdapter = VideosAdapter(it, this::onVideoSelected)
             videos.layoutManager = LinearLayoutManager(this)
             videos.adapter = videosAdapter
-
         } ?: run {
             videosSection.visibility = View.GONE
         }

@@ -44,4 +44,3 @@ class TestMoviesCache : MoviesCache {
         return Observable.just(Optional.of(movies[movieId]))
     }
 }
-

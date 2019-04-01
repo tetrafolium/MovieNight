@@ -48,14 +48,13 @@ class DetailsDataMovieEntityMapper @Inject constructor() : Mapper<DetailsData, M
         from.videos?.let {
             val videosEntities = it.results?.filter { videoData ->
                 videoData.site.equals(VideoEntity.SOURCE_YOUTUBE) &&
-                        videoData.type.equals(VideoEntity.TYPE_TRAILER) //TODO: remove from here?
+                        videoData.type.equals(VideoEntity.TYPE_TRAILER) // TODO: remove from here?
             }?.map { videoData ->
                         return@map VideoEntity(
                                 id = videoData.id,
                                 name = videoData.name,
                                 youtubeKey = videoData.key
                         )
-
                     }
             details.videos = videosEntities
         }
@@ -74,5 +73,4 @@ class DetailsDataMovieEntityMapper @Inject constructor() : Mapper<DetailsData, M
         movieEntity.details = details
         return movieEntity
     }
-
 }

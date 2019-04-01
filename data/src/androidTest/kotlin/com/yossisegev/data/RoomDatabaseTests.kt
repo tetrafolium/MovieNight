@@ -92,7 +92,7 @@ class RoomDatabaseTests {
         moviesDao.clear()
         assertTrue(moviesDao.getFavorites().isEmpty())
     }
-    
+
     @Test
     fun testSearchingMovieReturnsExpectedResults() {
         val movieData1 = TestsUtils.getMockedMovieData(150, "Star wars")

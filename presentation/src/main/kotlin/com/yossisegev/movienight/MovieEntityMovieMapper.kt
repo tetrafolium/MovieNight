@@ -1,7 +1,6 @@
 package com.yossisegev.movienight
 
 import com.yossisegev.domain.Mapper
-import com.yossisegev.domain.entities.Genre
 import com.yossisegev.domain.entities.MovieEntity
 import com.yossisegev.domain.entities.Review
 import com.yossisegev.movienight.entities.Movie
@@ -22,7 +21,6 @@ class MovieEntityMovieMapper @Inject constructor() : Mapper<MovieEntity, Movie>(
         const val backdropBaseUrl = "https://image.tmdb.org/t/p/w780"
         const val youTubeBaseUrl = "https://www.youtube.com/watch?v="
     }
-
 
     override fun mapFrom(from: MovieEntity): Movie {
         val movie = Movie(
@@ -81,7 +79,6 @@ class MovieEntityMovieMapper @Inject constructor() : Mapper<MovieEntity, Movie>(
             }
             details.reviews = reviews
         }
-
 
         return movie
     }

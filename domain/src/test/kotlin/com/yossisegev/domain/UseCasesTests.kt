@@ -7,7 +7,6 @@ import com.yossisegev.domain.common.DomainTestUtils
 import com.yossisegev.domain.common.DomainTestUtils.Companion.generateMovieEntityList
 import com.yossisegev.domain.common.TestMoviesCache
 import com.yossisegev.domain.common.TestTransformer
-import com.yossisegev.domain.entities.MovieEntity
 import com.yossisegev.domain.entities.Optional
 import com.yossisegev.domain.usecases.*
 import io.reactivex.Observable
@@ -65,8 +64,8 @@ class UseCasesTests {
                 .assertComplete()
         moviesCache.get(movieEntity.id).test()
                 .assertValue { optionalMovieEntity ->
-                    optionalMovieEntity.hasValue()
-                            && optionalMovieEntity.value?.id == movieEntity.id
+                    optionalMovieEntity.hasValue() &&
+                            optionalMovieEntity.value?.id == movieEntity.id
                 }
     }
 
@@ -118,8 +117,5 @@ class UseCasesTests {
         checkFavoriteStatus.check(100).test()
                 .assertValue { result -> result }
                 .assertComplete()
-
-
     }
-
 }

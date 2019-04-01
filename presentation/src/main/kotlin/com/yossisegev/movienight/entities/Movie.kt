@@ -1,11 +1,9 @@
 package com.yossisegev.movienight.entities
 
-import android.graphics.Movie
-
 /**
  * Created by Yossi Segev on 14/11/2017.
  */
-data class Movie (
+data class Movie(
 
     var id: Int = 0,
     var voteCount: Int = 0,
@@ -21,7 +19,8 @@ data class Movie (
     var releaseDate: String,
     var details: MovieDetails? = null,
     var isFavorite: Boolean = false,
-    var overview: String? = null) {
+    var overview: String? = null
+) {
 
     fun containsVideos(): Boolean {
         return details?.videos != null && details?.videos?.isNotEmpty() ?: false

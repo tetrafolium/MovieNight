@@ -34,6 +34,5 @@ class VideosAdapter(private val videos: List<Video>, private val callback: (Vide
                 setOnClickListener { callback(video) }
             }
         }
-
     }
 }

@@ -12,9 +12,11 @@ import io.reactivex.Observable
 /**
  * Created by Yossi Segev on 11/11/2017.
  */
-class RemoteMoviesDataStore(private val api: Api,
-                            private val movieDataMapper: Mapper<MovieData, MovieEntity>,
-                            private val detailedDataMapper: Mapper<DetailsData, MovieEntity>) : MoviesDataStore {
+class RemoteMoviesDataStore(
+    private val api: Api,
+    private val movieDataMapper: Mapper<MovieData, MovieEntity>,
+    private val detailedDataMapper: Mapper<DetailsData, MovieEntity>
+) : MoviesDataStore {
 
     override fun search(query: String): Observable<List<MovieEntity>> {
         return api.searchMovies(query).map { results ->

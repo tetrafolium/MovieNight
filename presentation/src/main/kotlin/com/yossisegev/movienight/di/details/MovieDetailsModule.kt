@@ -41,11 +41,13 @@ class MovieDetailsModule {
     }
 
     @Provides
-    fun provideMovieDetailsVMFactory(getMovieDetails: GetMovieDetails,
-                                     saveFavoriteMovie: SaveFavoriteMovie,
-                                     removeFavoriteMovie: RemoveFavoriteMovie,
-                                     checkFavoriteStatus: CheckFavoriteStatus,
-                                     mapper: MovieEntityMovieMapper): MovieDetailsVMFactory {
+    fun provideMovieDetailsVMFactory(
+        getMovieDetails: GetMovieDetails,
+        saveFavoriteMovie: SaveFavoriteMovie,
+        removeFavoriteMovie: RemoveFavoriteMovie,
+        checkFavoriteStatus: CheckFavoriteStatus,
+        mapper: MovieEntityMovieMapper
+    ): MovieDetailsVMFactory {
         return MovieDetailsVMFactory(getMovieDetails, saveFavoriteMovie, removeFavoriteMovie, checkFavoriteStatus, mapper)
     }
 }

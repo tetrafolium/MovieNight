@@ -73,7 +73,6 @@ class MappersTests {
         val reviewsResult = ReviewsResult()
         reviewsResult.results = reviews
 
-
         val detailsData = DetailsData(
                 id = 1,
                 title = "MovieData",
